@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.ingest.serviceaddress;
+package co.nz.vodafone.address.extract.nzad;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -11,9 +11,7 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.jupiter.api.Test;
 
-import io.quarkus.test.junit.QuarkusTest;
-
-class ServieAddressLoadTest  {
+class NZADExtractionTest  {
 	
 
     @Produce("direct:extract-load")
