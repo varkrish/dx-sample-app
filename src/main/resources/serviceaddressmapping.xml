@@ -1,0 +1,66 @@
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <stream name="serviceaddress" format="delimited" ignoreUnidentifiedRecords="true">
+  		<parser>
+            <property name="delimiter" value="|"/>
+        </parser>
+   <typeHandler type="java.lang.String" class="org.beanio.types.StringTypeHandler">
+		  <property name="nullIfEmpty" value="true" />
+	  </typeHandler>
+        <record name="serviceaddress" class="map"> 
+			<field name="service_location_id" type ="string" />
+			<field name="tui" type ="string" />
+			<field name="vui" type ="string" />
+			<field name="tlc" type ="string" />
+			<field name="plsam" type ="string" />
+			<field name="wgs84_lat" type ="string" />
+			<field name="wgs84_long" type ="string" />
+			<field name="in_use_type" type ="string" />
+			<field name="addr_type" type ="string" />
+			<field name="unit_type" type ="string" />
+			<field name="unit_identifier_low" type ="string" />
+			<field name="unit_identifier_high" type ="string" />
+			<field name="house_low" type ="string" />
+			<field name="house_low_suffix" type ="string" />
+			<field name="house_high" type ="string" />
+			<field name="house_high_suffix" type ="string" />
+			<field name="level_type" type ="string" />
+			<field name="level_number" type ="string" />
+			<field name="street_name" type ="string" />
+			<field name="street_type" type ="string" />
+			<field name="street_direction" type ="string" />
+			<field name="habitation_name" type ="string" />
+			<field name="locality_type" type ="string" />
+			<field name="suburb" type ="string" />
+			<field name="city_name" type ="string" />
+			<field name="city_locality" type ="string" />
+			<field name="region" type ="string" />
+			<field name="postcode_zone" type ="string" />
+			<field name="position_type" type ="string" />
+			<field name="format" type ="string" />
+			<field name="latest_alpha_data_source" type ="string" />
+			<field name="nzamsufi" type ="string" />
+			<field name="is_residential" type ="string" />
+			<field name="rd_seg_side" type ="string" />
+			<field name="latest_spatial_data_source" type ="string" />
+			<field name="auto_created" type ="string" />
+			<field name="auto_created_reason" type ="string" />
+			<field name="building_association" type ="string" />
+			<field name="town_type" type ="string" />
+			<field name="complex_addr_type" type ="string" />
+			<field name="complex_name" type ="string" />
+			<field name="ta_code" type ="string" />
+			<field name="region_name" type ="string" />
+			<field name="meshblock_id" type ="string" />
+			<field name="name_type" type ="string" />
+			<field name="suffix_abbrev" type ="string" />
+			<field name="name_status" type ="string" />
+			<field name="rd_seg_renamed_indicator" type ="string" />
+			<field name="type_abbrev" type ="string" />
+			<field name="building_type" type ="string" />
+			<field name="site_code" type ="string" />
+			<field name="location_code" type ="string" />
+			<field name="parcel_id" type ="string" />
+			<field name="density_zone" type ="string" />
+		</record>
+    </stream>
+</beanio>

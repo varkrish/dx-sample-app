@@ -1,0 +1,57 @@
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  <import  resource="classpath:serviceaddressmapping.xml"/> 
+ 
+ <template name="FileHeader">
+        <field name="file_name" type="string" length="60"/>
+        <field name="version_number"  length="10" />
+        <field name="creation_date" type="date" length="10" format="dd/mm/yyyy"/>
+        <field name="expiry_date" type="date" length="10" format="dd/mm/yyyy"/>
+    </template>
+    <template name="DeliveryAddressDetail">
+        <field name="action_indicator" type="string" length="1"/>
+        <field name="delivery_point_id" type="integer" length="7"/>
+        <field name="address_type" type="string" length="16"/>
+        <field name="street_number"  type="integer" length="15"/>
+        <field name="street_alpha" type="string" length="1"/>
+        <field name="unit_type" type="string" length="10"/>
+        <field name="unit_identifier" type="string" length="10"/><!-- 
+        <field name="floor" type="string" length="12"/>
+        <field name="building_name" type="string" length="50"/>
+        <field name="street_alias_id" type="string" length="15"/>
+        <field name="street_name" type="string" length="60"/>
+        <field name="street_type" type="string" length="15"/>
+        <field name="street_direction" type="string" length="10"/>
+        <field name="delivery_service_type" type="string" length="16"/>
+        <field name="box_bag_number" type="string" length="15"/>
+        <field name="box_bag_lobby_name" type="string" length="35"/>
+        <field name="suburb_alias_id" type="string" length="15"/>
+        <field name="suburb_name" type="string" length="35"/>
+        <field name="town_city_mailtown_alias_id" type="string" length="15"/>
+        <field name="town_city_mailtown_name" type="string" length="35"/>
+        <field name="postcode" type="string" length="4"/>
+        <field name="rd_number" type="string" length="5"/>
+        <field name="old_postcode" type="string" length="4"/>
+        <field name="record_usage_id" type="string" length="10"/> -->
+    </template>
+    <template name="FileFooter">
+        <field name="number_of_records" type="string" length="60"/>
+    </template>
+    <stream name="delivery_address_data" format="fixedlength" strict="false">
+        <group name="headerGroup" minOccurs="1" maxOccurs="1" order="1">
+            <record name="fileHeader" template="FileHeader"  maxOccurs="1"/>
+        </group>
+        <group name="address_data" minOccurs="1" maxOccurs="1" order="2">
+            <record name="body" template="DeliveryAddressDetail" minOccurs="0"/>
+        </group>
+        <group name="headerGroup" minOccurs="1" maxOccurs="1" order="3">
+            <record name="footer" template="FileFooter"   maxOccurs="1"/>
+        </group>
+    </stream>
+
+    <stream name="delivery_address_data1" format="fixedlength" strict="false">
+            <record name="fileHeader" template="FileHeader"  maxOccurs="1"/>
+            <record name="body" template="DeliveryAddressDetail" minOccurs="0"/>
+            <record name="footer" template="FileFooter"   maxOccurs="1"/>
+    </stream>
+    </beanio>
+   

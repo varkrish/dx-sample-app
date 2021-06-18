@@ -1,0 +1,11 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "dx-address-extract-nzad.fullname" . }}
+  labels:
+    {{- include "dx-address-extract-nzad.labels" . | nindent 4 }}
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      deploymentconfig: {{ include "dx-address-extract-nzad.fullname" . }}

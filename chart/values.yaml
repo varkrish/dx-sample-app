@@ -1,0 +1,19 @@
+# OpenShift objects
+route: false
+# if false use a kube deployment instead
+deploymentConfig: false
+replicas:
+  min: 1
+  max: 1
+image_repository: quay.apps.quay-production.ds.ahunga.co.nz
+image_name: dx-address-extract-nzad
+image_namespace: dxaddress
+image_version: 1.0.0
+# enable image stream in chart
+is:
+  enabled: true
+# use the image specified above as tag (else tag overridden in pipeline say)
+istag:
+  enabled: true
+# 
+config_secret_name: dx-address-extract-nzad

@@ -1,0 +1,50 @@
+{
+  "title": "\uD83E\uDDA9 Service NZAD extraction Service \uD83E\uDDA9",
+  "description": "Deploy Service NZAD extraction Service",
+  "type": "object",
+  "required": [],
+  "properties": {
+    "deploymentConfig": {
+      "type": "boolean",
+      "title": "Use a DeploymentConfig. Kubernetes Deployment is the default.",
+      "default": false
+    },
+    "image_name": {
+      "type": "string",
+      "title": "Image Name",
+      "default": "dx-int-new-app",
+      "minLength": 3
+    },
+    "image_namespace": {
+      "type": "string",
+      "title": "Image Namespace",
+      "default": "labs-ci-cd",
+      "examples": [
+        "labs-dev",
+        "labs-test",
+        "labs-staging"
+      ],
+      "minLength": 3
+    },
+    "image_repository": {
+      "type": "string",
+      "title": "Image Repository",
+      "default": "image-registry.openshift-image-registry.svc:5000",
+      "examples": [
+        "quay.io",
+        "image-registry.openshift-image-registry.svc:5000"
+      ],
+      "minLength": 3
+    },
+    "image_version": {
+      "type": "string",
+      "title": "Image Version",
+      "default": "latest",
+      "minLength": 3
+    },
+    "replicas": {
+      "type": "object",
+      "title": "Replicas"
+    }
+  }
+}
