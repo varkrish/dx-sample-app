@@ -15,5 +15,4 @@ is:
 # use the image specified above as tag (else tag overridden in pipeline say)
 istag:
   enabled: true
-# 
-config_secret_name: dx-address-extract-nzad
+

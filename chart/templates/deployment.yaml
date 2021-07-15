@@ -30,11 +30,6 @@ spec:
       labels:
         {{- include "dx-address-extract-nzad.selectorLabels" . | nindent 8 }}
     spec:
-      volumes:
-        - name: config-volume
-          secret:
-             secretName: {{ .Values.config_secret_name | quote }}
-             defaultMode: 420
       containers:
         - env:
             - name: QUARKUS_PROFILE
@@ -46,11 +41,6 @@ spec:
           image: ' '
           imagePullPolicy: Always
           name: {{ include "dx-address-extract-nzad.name" . }}
-       #Quarkus reads the runtime config from $PWD/config/application.properties
-          volumeMounts: 
-            - name: config-volume
-              mountPath: /deployments/config
-              readOnly: true
           livenessProbe:
             httpGet:
               path: /health/live
