@@ -7,7 +7,7 @@ replicas:
   max: 1
 image_repository: quay.apps.quay-production.ds.ahunga.co.nz
 image_name: dx-sample-app
-image_namespace: dxaddress
+image_namespace: dxsample
 image_version: 1.0.0
 # enable image stream in chart
 is:
