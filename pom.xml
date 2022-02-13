@@ -4,8 +4,8 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>co.nz.vodafone.address.ingest</groupId>
-	<artifactId>dx-address-extract-nzad</artifactId>
+	<groupId>co.nz.organizationfone.address.ingest</groupId>
+	<artifactId>dx-sample-app</artifactId>
 	<version>1.0.0</version>
 	<properties>
 		<compiler-plugin.version>3.8.1</compiler-plugin.version>

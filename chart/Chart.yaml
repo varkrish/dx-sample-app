@@ -1,5 +1,5 @@
 apiVersion: v2
-name: dx-address-extract-nzad
+name: dx-sample-app
 description: DX Address Extraction Application
 type: application
 version: 1.0.0
@@ -8,7 +8,7 @@ home: https://labs/helm-charts
 icon: https://avatars1.githubusercontent.com/u/68044996?s=200&v=4
 kubeVersion: '>=1.11.0-0'
 keywords:
-- dx-address-extract-nzad
+- dx-sample-app
 - extract-nzad
 - nzad
 maintainers:

@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.ingest.common.aggregators;
+package co.nz.organizationfone.address.ingest.common.aggregators;
 
 import java.util.ArrayList;
 import java.util.Map;

@@ -3,15 +3,15 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: {{ include "dx-address-extract-nzad.fullname" . }}
+  name: {{ include "dx-sample-app.fullname" . }}
   labels:
-    {{- include "dx-address-extract-nzad.labels" . | nindent 4 }}
+    {{- include "dx-sample-app.labels" . | nindent 4 }}
 spec:
   port:
     targetPort: tcp-8080
   to:
     kind: Service
-    name: {{ include "dx-address-extract-nzad.fullname" . }}
+    name: {{ include "dx-sample-app.fullname" . }}
     weight: 100
   tls:
     insecureEdgeTerminationPolicy: Redirect

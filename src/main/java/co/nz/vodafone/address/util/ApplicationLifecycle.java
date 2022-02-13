@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.util;
+package co.nz.organizationfone.address.util;
 
 import io.quarkus.runtime.StartupEvent;
 import org.slf4j.Logger;

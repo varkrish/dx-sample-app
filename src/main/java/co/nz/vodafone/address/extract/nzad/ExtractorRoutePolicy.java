@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.extract.nzad;
+package co.nz.organizationfone.address.extract.nzad;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Route;

@@ -2,9 +2,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "dx-address-extract-nzad.fullname" . }}
+  name: {{ include "dx-sample-app.fullname" . }}
   labels:
-    {{- include "dx-address-extract-nzad.labels" . | nindent 4 }}
+    {{- include "dx-sample-app.labels" . | nindent 4 }}
 spec:
   endpoints:
     - interval: 30s
@@ -12,4 +12,4 @@ spec:
       scheme: http
   selector:
     matchLabels:
-    {{- include "dx-address-extract-nzad.labels" . | nindent 6 }}
+    {{- include "dx-sample-app.labels" . | nindent 6 }}

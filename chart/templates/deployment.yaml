@@ -3,18 +3,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "dx-address-extract-nzad.fullname" . }}
+  name: {{ include "dx-sample-app.fullname" . }}
   annotations:
-    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"{{ include "dx-address-extract-nzad.fullname" . }}:{{ .Values.image_version }}"},"fieldPath":"spec.template.spec.containers[?(@.name==\"dx-address-extract-nzad\")].image"}]'
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"{{ include "dx-sample-app.fullname" . }}:{{ .Values.image_version }}"},"fieldPath":"spec.template.spec.containers[?(@.name==\"dx-sample-app\")].image"}]'
   labels:
-    {{- include "dx-address-extract-nzad.labels" . | nindent 4 }}
+    {{- include "dx-sample-app.labels" . | nindent 4 }}
 spec:
   progressDeadlineSeconds: 600
   replicas: {{ .Values.replicas.min }}
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      {{- include "dx-address-extract-nzad.selectorLabels" . | nindent 6 }}
+      {{- include "dx-sample-app.selectorLabels" . | nindent 6 }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -28,7 +28,7 @@ spec:
         prometheus.io/port: '8080'
         rollme: {{ randAlphaNum 5 | quote }}
       labels:
-        {{- include "dx-address-extract-nzad.selectorLabels" . | nindent 8 }}
+        {{- include "dx-sample-app.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - env:
@@ -40,7 +40,7 @@ spec:
               value: INFO       
           image: ' '
           imagePullPolicy: Always
-          name: {{ include "dx-address-extract-nzad.name" . }}
+          name: {{ include "dx-sample-app.name" . }}
           livenessProbe:
             httpGet:
               path: /health/live

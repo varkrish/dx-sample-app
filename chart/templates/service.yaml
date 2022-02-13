@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "dx-address-extract-nzad.fullname" . }}
+  name: {{ include "dx-sample-app.fullname" . }}
   labels:
-    {{- include "dx-address-extract-nzad.labels" . | nindent 4 }}
+    {{- include "dx-sample-app.labels" . | nindent 4 }}
 spec:
   ports:
     - port: 8080
@@ -16,7 +16,7 @@ spec:
       targetPort: 8443
       name: tcp-8443
   selector:
-    {{- include "dx-address-extract-nzad.selectorLabels" . | nindent 4 }}
+    {{- include "dx-sample-app.selectorLabels" . | nindent 4 }}
   sessionAffinity: None
   type: ClusterIP
 status:

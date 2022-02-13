@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.extract.nzad;
+package co.nz.organizationfone.address.extract.nzad;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -21,14 +21,14 @@ class NZADExtractionTest {
 
     @Test
     void test() throws InterruptedException {
-        //	String expectedBody = "1";
-        //	resultEndpoint.setExpectedCount(1);
+        // String expectedBody = "1";
+        // resultEndpoint.setExpectedCount(1);
         Map headers = new HashMap<String, String>();
         headers.put("CamelFileName", "testfile.csv");
         String body = "359389235|1002292350|2000000004|101749090|8410618|-44.6595324|169.1286949|Yes (Developed)|Primary||||55||55||||PENRITH PARK|DRIVE|||SUBURB|WANAKA|WANAKA|WANAKA|āQUEENSTOWN-LAKES DISTRICT|9305|Unknown|Street||1514778202|Y|Left||N|||Populated place|||070|Otago Region|4000948|||Primary|N|DR|Unknown|||3258|Medium\n";
-        //template.sendBodyAndHeaders(body, headers);
+        // template.sendBodyAndHeaders(body, headers);
         assertTrue(true);
-        //	resultEndpoint.assertIsSatisfied();
+        // resultEndpoint.assertIsSatisfied();
     }
 
 }

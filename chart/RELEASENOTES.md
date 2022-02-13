@@ -11,6 +11,6 @@
 * None
 
 # Documentation
-* See dx-address-extract-nzad README.md
+* See dx-sample-app README.md
 
 # Version History

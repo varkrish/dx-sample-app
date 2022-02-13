@@ -1,4 +1,4 @@
-package co.nz.vodafone.address.ingest.common.aggregators;
+package co.nz.organizationfone.address.ingest.common.aggregators;
 
 import org.apache.camel.AggregationStrategy;
 import org.apache.camel.Exchange;
